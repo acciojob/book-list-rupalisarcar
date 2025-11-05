@@ -1,6 +1,7 @@
 //your JS code here. If required.
 const btn = document.getElementById("submit");
-function addBook(){
+function addBook(event){
+	 event.preventDefault();
 	const booktitle = document.getElementById("title").value;
 	const bookAuthor = document.getElementById("author").value;
 	const isbn = document.getElementById("isbn").value;
@@ -18,10 +19,10 @@ function addBook(){
 	removeBtn.innerHTML = "&times;";
 
 	console.log(`firstCol= ${booktitle} secCol= ${bookAuthor}, thirdCol= ${isbn}`)
-	tableRow.append(firstCol);
-	tableRow.append(secCol);
-	tableRow.append(thirdCol);
-	tableRow.append(removeBtn);
+	tableRow.appendChild(firstCol);
+	tableRow.appendChild(secCol);
+	tableRow.appendChild(thirdCol);
+	tableRow.appendChild(removeBtn);
 	
 	// Add some styling for better presentation (e.g., cursor pointer)
 	removeBtn.style.cursor = "pointer";
@@ -29,11 +30,12 @@ function addBook(){
 	removeBtn.style.backgroundColor="red";
 	removeBtn.style.color="white";
 
-	bookList.append(tableRow)
+	bookList.appendChild(tableRow)
 	removeBtn.addEventListener("click",removeBookList)	
 	function removeBookList(){
-		
+		tableRow.remove()
 	}
+	
 }
 
 
