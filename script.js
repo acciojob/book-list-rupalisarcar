@@ -24,7 +24,7 @@ function addBook(event){
 	removeBtn.style.backgroundColor="red";
 	removeBtn.style.color="white";
 	removeBtn.style.border="none";
-	removeBtn.classList.add="delete";
+	removeBtn.classList.add("delete");
 	
 	rmvCol.appendChild(removeBtn)
 	
